@@ -10,12 +10,10 @@ Main();
 
 async function Main() {
   const options = {
-    exchangeName: process.env.EXCHANGE_NAME,
     queueName: process.env.QUEUE_NAME,
   };
 
   const mapBackgroundServiceQueueOptions = {
-    exchangeName: process.env.EXCHANGE_NAME_BACKGROUND,
     queueName: process.env.QUEUE_NAME_BACKGROUND,
   };
 
