@@ -25,8 +25,6 @@ async function Main() {
 }
 
 async function ProcessMessageAsync(msg) {
-  const message = GetMapBackgroundServiceMessage(msg);
-  await SendMessageToQueue(mapBackgroundServiceChannelInfo, message);
 }
 
 function GetMapBackgroundServiceMessage(options) {
