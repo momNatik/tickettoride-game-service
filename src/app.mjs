@@ -4,9 +4,11 @@ import { GenerateMapAsync } from "./js/map/map-service.mjs";
 Main();
 
 async function Main() {
-  const options = {
-    queueName: process.env.QUEUE_NAME,
-  };
+  const connection = await QUEUE.ConnectAsync();
 
-  await QUEUE.ConnectToQueueAsync(options, GenerateMapAsync);
+  await QUEUE.ConnectToQueueAsync(
+    connection,
+    process.env.QUEUE_NAME,
+    GenerateMapAsync
+  );
 }
