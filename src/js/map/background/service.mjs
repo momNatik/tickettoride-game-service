@@ -17,11 +17,9 @@ function ValidateParams(params) {
   console.log("----------------");
   
   validator.isEmpty(params.gameId);
-  validator.isEmpty(params.width);
-  validator.isEmpty(params.height);
   
-  validator.isInt(params.width, {min: 160, max: 640});
-  validator.isInt(params.height, {min: 120, max: 480});
+  validator.isInt(`${params.width}`, {min: 160, max: 640});
+  validator.isInt(`${params.height}`, {min: 120, max: 480});
   
   console.log("================");
 }

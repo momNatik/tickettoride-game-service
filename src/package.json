@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch --env-file=.env app.mjs"
+    "dev": "node --watch --env-file=../../.env app.mjs"
   },
   "keywords": [],
   "author": "",
