@@ -4,14 +4,18 @@ import DB from "../../../tickettoride-backend-common/src/db/provider.mjs";
 export async function GenerateMapAsync(msg) {
   const params = msg;
 
-  await GenerateAndSaveMapBackgroundAsync(params);
-// TODO GenerateAndSaveMapTopologyAsync
+  try {
+    await GenerateAndSaveMapBackgroundAsync(params);
+    // TODO GenerateAndSaveMapTopologyAsync
 
-  const game = {
-    _id: msg.gameId,
-    status: 1,
-  };
-  await DB.CreateGameAsync(game);
+    const game = {
+      _id: msg.gameId,
+      status: 1,
+    };
+    await DB.CreateGameAsync(game);
+  } catch (error) {
+    console.log(`\x1b[33mERROR: ${error}\x1b[0m`);
+  }
 }
 
 function GetMapBackgroundServiceMessage(options) {
