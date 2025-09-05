@@ -6,7 +6,7 @@ export async function GenerateMapAsync(msg) {
 
   try {
     console.log("Generating background map...");
-    // await GenerateAndSaveMapBackgroundAsync(params);
+    await GenerateAndSaveMapBackgroundAsync(params);
     // TODO GenerateAndSaveMapTopologyAsync
 
     const game = {
