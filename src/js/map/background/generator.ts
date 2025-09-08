@@ -4,7 +4,7 @@ import {
   GetGrayscalePalette,
   GetEarthPalette,
   GetBurnPalette,
-} from "./palettes.mjs";
+} from "./palettes.js";
 
 export async function GenerateAsync(options) {
   const palette = GetPalette(options.paletteType);
@@ -15,7 +15,7 @@ async function GeneratePicture(options, palette) {
   const generator = new landscaper.Generator(options);
   const rgbBuffer = await generator.FillRgbBufferAsync(2, 0.95, palette);
 
-  const sharpOptions = {
+  const sharpOptions: sharp.SharpOptions = {
     raw: {
       width: options.width,
       height: options.height,

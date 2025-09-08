@@ -1,5 +1,5 @@
 import validator from "validator";
-import { GenerateAsync } from "./generator.mjs";
+import { GenerateAsync } from "./generator.js";
 import { SaveFileAsync } from "../../../../tickettoride-backend-common/src/file-store/game-files.mjs";
 import { GetFileStoreKey } from "../../../../tickettoride-backend-common/src/file-store/file-store-utils.mjs";
 
