@@ -1,6 +1,6 @@
 import QUEUE from "../../tickettoride-backend-common/project/dist/queue/queue.js";
 import { GenerateMapAsync } from "./map/map-service.js";
-import LOGGING from "../../tickettoride-backend-common/src/logging/log.mjs";
+import LOGGING from "../../tickettoride-backend-common/project/src/logging/log.ts";
 
 LOGGING.ShowStartInfo("GAME_SERVICE_NAME");
 
