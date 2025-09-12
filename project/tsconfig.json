@@ -4,6 +4,10 @@
     // File Layout
     "rootDirs": ["../tickettoride-backend-common/project/src", "./src"],
     "outDir": "./dist",
+    "paths": {
+      "@common": ["../../tickettoride-backend-common/project/src"],
+      "@common/*": ["../../tickettoride-backend-common/project/src/*"]
+    },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -39,6 +43,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }
