@@ -2,8 +2,10 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    "rootDirs": ["../tickettoride-backend-common/project/src", "./src"],
+    // "rootDirs": ["./src"],
+    // "rootDir": "./src",
     "outDir": "./dist",
+    "baseUrl": "./src",
     "paths": {
       "@common": ["../../tickettoride-backend-common/project/src"],
       "@common/*": ["../../tickettoride-backend-common/project/src/*"]
@@ -44,9 +46,5 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "../tickettoride-backend-common/project/src/**/*.ts"
-  ]
+  }
 }
