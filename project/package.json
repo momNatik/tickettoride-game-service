@@ -4,10 +4,18 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "dist": "node --watch --env-file=../../.env ./dist/index.js",
+    "dist": "node --watch --env-file=../../.env ./dist/project/src/index.js",
     "dev": "node --loader ts-node/esm --env-file=../../.env --no-warnings=ExperimentalWarning src/index.ts",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && tsc-alias",
+    "ts-node": "npx ts-node -r module-alias/register src/index.ts"
+  },
+  "_moduleAliases": {
+    "@common": [
+      "./dist/tickettoride-backend-common/project/"
+    ],
+    "@common/*": [
+      "./dist/tickettoride-backend-common/project/*"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -19,9 +27,13 @@
     "validator": "^13.15.15"
   },
   "devDependencies": {
+    "@types/module-alias": "^2.0.4",
     "@types/node": "^24.3.1",
     "@types/validator": "^13.15.3",
+    "module-alias": "^2.2.3",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.2"
   }
 }

@@ -7,7 +7,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "@common": ["../../tickettoride-backend-common/project/src"],
+      // "@common": ["../../tickettoride-backend-common/project/src"],
       "@common/*": ["../../tickettoride-backend-common/project/src/*"]
     },
 
@@ -16,6 +16,7 @@
     "module": "nodenext",
     "target": "esnext",
     "types": ["node"],
+    "moduleResolution": "nodenext",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -46,5 +47,9 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "../tickettoride-backend-common/project/src/**/*.ts"
+  ]
 }
