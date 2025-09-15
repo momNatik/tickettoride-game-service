@@ -1,4 +1,4 @@
-import 'module-alias/register.d.ts';
+import 'module-alias/register.js';
 import QUEUE from "@common/queue/queue.js";
 import { GenerateMapAsync } from "./map/map-service.js";
 import LOGGING from "@common/logging/log.js";
