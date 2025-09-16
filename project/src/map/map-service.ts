@@ -1,5 +1,5 @@
 import { GenerateAndSaveMapBackgroundAsync } from "./background/service.js";
-import DB from "@common/db/provider.js";
+import DB from "../../../tickettoride-backend-common/project/src/db/provider.js";
 
 export async function GenerateMapAsync(msg) {
   const params = msg;

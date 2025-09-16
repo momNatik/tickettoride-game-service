@@ -1,7 +1,7 @@
 import validator from "validator";
 import { GenerateAsync } from "./generator.js";
-import { SaveFileAsync } from "@common/file-store/game-files.js";
-import { GetFileStoreKey } from "@common/file-store/file-store-utils.js";
+import { SaveFileAsync } from "../../../../tickettoride-backend-common/project/src//file-store/game-files.js";
+import { GetFileStoreKey } from "../../../../tickettoride-backend-common/project/src/file-store/file-store-utils.js";
 
 export async function GenerateAndSaveMapBackgroundAsync(params) {
   ValidateParams(params);

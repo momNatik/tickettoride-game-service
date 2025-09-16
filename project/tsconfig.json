@@ -6,10 +6,6 @@
     // "rootDir": "./src",
     "outDir": "./dist",
     "baseUrl": "./src",
-    "paths": {
-      // "@common": ["../../tickettoride-backend-common/project/src"],
-      "@common/*": ["../../tickettoride-backend-common/project/src/*"]
-    },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
