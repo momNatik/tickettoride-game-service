@@ -2,17 +2,17 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    // "rootDirs": ["./src"],
+    "rootDirs": ["./src", "../tickettoride-backend-common/project/src"],
     // "rootDir": "./src",
     "outDir": "./dist",
     "baseUrl": "./src",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "esnext",
     "target": "esnext",
     "types": ["node"],
-    "moduleResolution": "nodenext",
+    "moduleResolution": "bundler",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -47,5 +47,8 @@
   "include": [
     "src/**/*.ts",
     "../tickettoride-backend-common/project/src/**/*.ts"
-  ]
+  ],
+  "paths": {
+    "#common/*": ["../tickettoride-backend-common/project/src/*"]
+  }
 }

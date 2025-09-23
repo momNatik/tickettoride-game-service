@@ -8,6 +8,9 @@
     "dev": "node --loader ts-node/esm --env-file=../../.env --no-warnings=ExperimentalWarning src/index.ts",
     "build": "tsc"
   },
+  "imports": {
+    "#common/*": "../tickettoride-backend-common/project/src/*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
