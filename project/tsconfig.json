@@ -1,13 +1,10 @@
 {
+  "extends": "../../tickettoride/tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
 
     "outDir": "./dist",
     "rootDir": "./src",
 
-    "strict": false,
     // paths aliases
     "baseUrl": "./src",
     "paths": {
