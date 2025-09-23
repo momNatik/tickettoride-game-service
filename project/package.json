@@ -1,27 +1,19 @@
 {
-  "type": "module",
   "name": "tickettoride-game-service",
   "version": "1.0.0",
-  "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "dist": "node --watch --env-file=../../.env ./dist/project/src/index.js",
-    "dev": "node --loader ts-node/esm --env-file=../../.env --no-warnings=ExperimentalWarning src/index.ts",
-    "build": "tsc"
+    "exec": "tsc --build && node --loader=ts-paths-esm-loader --env-file=../../.env --no-warnings dist/index.js",
+    "dev": "node --loader ts-node/esm --no-warnings=ExperimentalWarning --env-file=../../.env src/index.ts"
   },
-  "imports": {
-    "#common/*": "../tickettoride-backend-common/project/src/*"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@daos16/landscaper": "^1.0.0",
     "sharp": "^0.34.3",
     "validator": "^13.15.15",
     "@aws-sdk/client-s3": "^3.864.0",
     "amqplib": "^0.10.8",
-    "mongodb": "^6.18.0"
+    "mongodb": "^6.18.0",
+    "ts-paths-esm-loader": "^1.4.3"
   },
   "devDependencies": {
     "@types/node": "^24.3.1",
