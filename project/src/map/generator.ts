@@ -15,7 +15,7 @@ async function GenerateAndSaveLandscapeAsync(params) {
   const picture = await GenerateLandscapeAsync(params);
   const buffer = await picture.toBuffer();
 
-  await SaveResourceAsync(params.gameId, 'background', buffer);
+  await SaveResourceAsync(params.gameId, 'background', buffer, 'image/png');
   return picture;
 }
 
@@ -27,12 +27,12 @@ async function GenerateAndSaveTopologyAsync(params, landscapePicture) {
   <path d="M78,42c-6-9-20-9,-25,0c-2,5-2,11,0,16c5,9,19,9,25,0l-6-3c-2,5-9,5-11,0c-1-1-1-9,0-10c2-5,9-4,11,0z"/>
 </svg>
 `;
-  await SaveResourceAsync(params.gameId, 'topology', svgText);
+  await SaveResourceAsync(params.gameId, 'topology', svgText, 'image/svg+xml');
 }
 
-async function SaveResourceAsync(gameId, mapResourceId, buffer) {
+async function SaveResourceAsync(gameId, mapResourceId, buffer, contentType) {
   const resourceName = GetFileStoreKey(mapResourceId, gameId);
-  await SaveFileAsync(resourceName, buffer);
+  await SaveFileAsync(resourceName, buffer, contentType);
 }
 
 function ValidateParams(params) {
