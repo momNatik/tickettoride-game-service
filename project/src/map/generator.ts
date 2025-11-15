@@ -15,7 +15,7 @@ async function GenerateAndSaveLandscapeAsync(params) {
   const picture = await GenerateLandscapeAsync(params);
   const buffer = await picture.toBuffer();
 
-  await SaveResourceAsync(params.gameId, 'background', buffer, 'image/png');
+  await SaveResourceAsync(params.gameId, 'landscape', buffer, 'image/png');
   return picture;
 }
 

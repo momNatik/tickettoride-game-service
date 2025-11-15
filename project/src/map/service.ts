@@ -20,7 +20,7 @@ export async function GenerateMapAsync(msg) {
 }
 
 // TODO
-// function GetMapBackgroundServiceMessage(options) {
+// function GetMapLandscapeServiceMessage(options) {
 //   return {
 //     gameId: options.gameId,
 //     paletteType: "earth",
