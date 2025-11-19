@@ -6,12 +6,14 @@ import {
   GetBurnPalette,
 } from "./palettes.js";
 
-export async function GenerateAsync(options) {
+export default { CreateAsync };
+
+async function CreateAsync(options) {
   const palette = GetPalette(options.paletteType);
-  return await GeneratePicture(options, palette);
+  return await CreatePicture(options, palette);
 }
 
-async function GeneratePicture(options, palette) {
+async function CreatePicture(options, palette) {
   const generator = new landscaper.Generator(options);
   const rgbBuffer = await generator.FillRgbBufferAsync(2, 0.95, palette);
 

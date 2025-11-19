@@ -1,19 +1,22 @@
 {
   "extends": "../../tickettoride/tsconfig.json",
   "compilerOptions": {
-
     "outDir": "./dist",
     "rootDir": "./src",
 
     // paths aliases
     "baseUrl": "./src",
     "paths": {
-      "@common/*": ["../../../tickettoride-backend-common/project/src/*"]
+      "@common/*": ["../../../tickettoride-backend-common/project/src/*"],
+      "@topology/*": ["../../../tickettoride-map-service/project/src/*"]
     }
   },
   "references": [
     {
       "path": "../../tickettoride-backend-common/project"
+    },
+    {
+      "path": "../../tickettoride-map-service/project"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { GenerateAndSaveMapAsync } from "./generator.js";
+import { CreateAndSaveMapAsync } from "./generator.js";
 import DB from "@common/db/provider.js";
 
 export async function GenerateMapAsync(msg) {
@@ -7,7 +7,7 @@ export async function GenerateMapAsync(msg) {
   try {
     console.log("Generating map...");
 
-    await GenerateAndSaveMapAsync(params);
+    await CreateAndSaveMapAsync(params);
 
     const game = {
       _id: msg.gameId,
