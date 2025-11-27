@@ -7,9 +7,9 @@ import TOPOLOGY from "@topology/index.js"
 export async function CreateAndSaveMapAsync(params) {
   ValidateParams(params);
 
-  const landscapePicture = await CreateAndSaveLandscapeAsync(params);
+  const landscape = await CreateAndSaveLandscapeAsync(params);
 
-  await CreateAndSaveTopologyAsync(params, landscapePicture);
+  await CreateAndSaveTopologyAsync(params, landscape);
 }
 
 async function CreateAndSaveLandscapeAsync(params) {
@@ -20,8 +20,8 @@ async function CreateAndSaveLandscapeAsync(params) {
   return picture;
 }
 
-async function CreateAndSaveTopologyAsync(params, landscapePicture) {
-  const svgText = TOPOLOGY.Create(params, landscapePicture);
+async function CreateAndSaveTopologyAsync(params, landscape) {
+  const svgText = TOPOLOGY.Create(params, landscape);
   await SaveResourceAsync(params.gameId, 'topology', svgText, 'image/svg+xml');
 }
 
