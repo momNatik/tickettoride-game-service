@@ -3,8 +3,9 @@ import LANDSCAPE from "./landscape/generator.js";
 import { SaveFileAsync } from "@common/file-store/game-files.js";
 import { GetFileStoreKey } from "@common/file-store/file-store-utils.js";
 import TOPOLOGY from "@topology/index.js"
+import type { GameParams } from "@topology/index.js"
 
-export async function CreateAndSaveMapAsync(params) {
+export async function CreateAndSaveMapAsync(params: GameParams) {
   ValidateParams(params);
 
   const landscape = await CreateAndSaveLandscapeAsync(params);
@@ -12,7 +13,7 @@ export async function CreateAndSaveMapAsync(params) {
   await CreateAndSaveTopologyAsync(params, landscape);
 }
 
-async function CreateAndSaveLandscapeAsync(params) {
+async function CreateAndSaveLandscapeAsync(params: GameParams) {
   const picture = await LANDSCAPE.CreateAsync(params);
   const buffer = await picture.toBuffer();
 
@@ -20,7 +21,7 @@ async function CreateAndSaveLandscapeAsync(params) {
   return picture;
 }
 
-async function CreateAndSaveTopologyAsync(params, landscape) {
+async function CreateAndSaveTopologyAsync(params:GameParams, landscape) {
   const svgText = TOPOLOGY.Create(params, landscape);
   await SaveResourceAsync(params.gameId, 'topology', svgText, 'image/svg+xml');
 }
@@ -30,7 +31,7 @@ async function SaveResourceAsync(gameId, mapResourceId, buffer, contentType) {
   await SaveFileAsync(resourceName, buffer, contentType);
 }
 
-function ValidateParams(params) {
+function ValidateParams(params: GameParams) {
   console.log("----------------");
 
   validator.isEmpty(params.gameId);
